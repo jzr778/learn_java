@@ -34,7 +34,7 @@ public class TimeAspect {
      *
      * AOP自动生成代理对象交给IOC容器，controller中注入的不再是目标对象而是代理对象
      */
-    @Around("execution(* com.itheima.service.*.*(..))")
+    @Around("com.itheima.aop.MyAspect.pt()") // 切入点表达式
     public Object recordTime(ProceedingJoinPoint joinPoint) throws Throwable {
         // 1. 记录开始时间
         long begin = System.currentTimeMillis();
